@@ -94,7 +94,7 @@ $character"""
 [aws]
 symbol = " "
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
-disabled = true
+#disabled = true
 
 [buf]
 symbol = " "
