@@ -23,7 +23,7 @@ copy() {
             echo "copied"
             return 0
         else
-            echo "Error: Failed to copy piped input" >&2
+            echo "Error: Failed to copy piped input"
             return 1
         fi
     elif [ "$#" -ne 1 ]; then
@@ -32,7 +32,7 @@ copy() {
         return 1
     elif [ ! -f "$1" ]; then 
         # Check if arg is a file
-        echo "Error: File '$1' does not exist." >&2
+        echo "Error: File '$1' does not exist."
         return 1
     fi
 
@@ -44,6 +44,8 @@ copy() {
         echo "Failed to copy contents of '$1' to the clipbaord" >&2
     fi
 }
+
+
 
 # Enable command history
 HISTSIZE=1000
