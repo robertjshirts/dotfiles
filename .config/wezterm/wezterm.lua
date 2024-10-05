@@ -7,13 +7,13 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Try wayland fixing
-config.enable_wayland = true
+config.enable_wayland = false
 
 -- Use nerd font
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 
 -- Use bash as default shell
-config.default_prog = { "bash", "-l" }
+config.default_prog = { "bash" }
 
 -- Use a color scheme
 config.color_scheme = "Ashes (base16)"
