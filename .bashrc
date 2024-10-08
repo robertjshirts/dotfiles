@@ -14,6 +14,11 @@ if [ -f "$HOME/.bash_aliases" ]; then
     . "$HOME/.bash_aliases"
 fi
 
+# Load secrets
+if [ -f ~/.bash_secrets ]; then
+    source ~/.bash_secrets
+fi
+
 copy() {
     # Function to copy contents of a file to clipboard using wl-copy
     if ! tty -s; then
