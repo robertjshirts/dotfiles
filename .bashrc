@@ -14,6 +14,27 @@ if [ -f "$HOME/.bash_aliases" ]; then
     . "$HOME/.bash_aliases"
 fi
 
+# Load ssh-agent
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+start_agent() {
+    echo "Starting ssh-agent..."
+    ssh-agent > "$SSH_ENV"
+    chmod 600 "$SSH_ENV"
+    . "$SSH_ENV" > /dev/null
+    ssh-add ~/.ssh/gh_arch_btw #~/.ssh/actions, etc (whitespace sep)
+}
+
+# Source SSH environment if it exists
+if [ -f "$SSH_ENV" ]; then
+    . "$SSH_ENV" > /dev/null
+fi
+
+# Check if ssh-agent is still running, if not, start it
+if ! ps -p "$SSH_AGENT_PID" > /dev/null 2>&1; then
+    start_agent
+fi
+
 # Load secrets
 if [ -f ~/.bash_secrets ]; then
     source ~/.bash_secrets
@@ -50,6 +71,10 @@ copy() {
     fi
 }
 
+getip() {
+    curl -s http://ip4only.me/api/ | awk -F, '{print $2}' | copy
+}
+
 # Enable command history
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -75,3 +100,5 @@ alias ..='cd ..'                          # Go up one directory
 alias ...='cd ../..'                      # Go up two directories
 alias wezterm='WAYLAND_DISPLAY= wezterm'  # TODO: Remove this when wezterm gets fixed lol
 alias lzd="lazydocker"                    # Lazydocker
+alias permaban="rm -rf" # LMAO
+alias getip="curl -s http://ip4only.me/api/ | awk -F, '{print $2}' | copy"
