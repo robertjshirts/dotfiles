@@ -92,7 +92,7 @@ if [ -f '/home/rshirts/google-cloud-sdk/path.bash.inc' ]; then . '/home/rshirts/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rshirts/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rshirts/google-cloud-sdk/completion.bash.inc'; fi
 
-# Aliases
+# Aliases and exports
 alias ls='ls --color=auto -a'             # List hidden files and in color :)
 alias grep='grep --color=auto'
 alias lss='ls --color=auto'               # List files (not including hidden ones)
@@ -101,4 +101,3 @@ alias ...='cd ../..'                      # Go up two directories
 alias wezterm='WAYLAND_DISPLAY= wezterm'  # TODO: Remove this when wezterm gets fixed lol
 alias lzd="lazydocker"                    # Lazydocker
 alias permaban="rm -rf" # LMAO
-alias getip="curl -s http://ip4only.me/api/ | awk -F, '{print $2}' | copy"
