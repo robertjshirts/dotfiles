@@ -18,5 +18,8 @@ config.default_prog = { "bash" }
 -- Use a color scheme
 config.color_scheme = "Ashes (base16)"
 
+-- OPACTICITY
+config.window_background_opacity = 0.925
+
 -- and finally, return the configuration to wezterm
 return config

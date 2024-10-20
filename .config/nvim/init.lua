@@ -21,9 +21,6 @@ vim.opt.showmode = false -- Don't show mocde bc it's in the status bar
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- Disable netrw (so Neotree pops up)
-vim.g.loaded_netrwPlugin = 1
-
 -- Decrease update time
 vim.opt.updatetime = 250
 
@@ -32,6 +29,10 @@ vim.opt.mouse = 'a'
 
 -- Decrease mapped sequence wait time. Displays which-key popup sooner
 vim.opt.timeoutlen = 300
+
+-- Disable 's' key in visual mode
+-- To force using 'c'.
+vim.keymap.set('v', 's', '<nop>', { noremap = true })
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -833,6 +834,9 @@ require('lazy').setup({
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
 }, {
+  git = {
+    terminal_cmd = 'git',
+  },
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table

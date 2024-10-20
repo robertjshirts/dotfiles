@@ -83,6 +83,7 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
+detect_extensions = []
 symbol = " "
 
 [ocaml]

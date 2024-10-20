@@ -7,7 +7,7 @@
 export EDITOR=nvim  # Change this to your preferred editor (e.g., vim, code)
 
 # Add custom paths
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.deno/bin:$HOME/bin:$PATH"
 
 # Load additional scripts or configurations
 if [ -f "$HOME/.bash_aliases" ]; then
@@ -101,3 +101,5 @@ alias ...='cd ../..'                      # Go up two directories
 alias wezterm='WAYLAND_DISPLAY= wezterm'  # TODO: Remove this when wezterm gets fixed lol
 alias lzd="lazydocker"                    # Lazydocker
 alias permaban="rm -rf" # LMAO
+export QT_QPA_PLATFORM=xcb
+. /usr/local/etc/bash_completion.d/deno.bash
