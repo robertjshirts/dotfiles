@@ -4,7 +4,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Nerd font, relative numbers, mouse mode, status line shows mode alr, clipboard, break indent (?), undo history, case insensitive searching, sign column
+-- Nerd font, relative numbers, mouse mode, status line shows mode alr, clipboard, break indent (?), undo history, case insensitive searching, sign column, tabstop
 vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -18,7 +18,8 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
-
+vim.opt.tabstop = 4 -- Tabstop fix
+vim.opt.shiftwidth = 4 -- Tabstop fix
 -- Remove 's' key
 vim.keymap.set('v', 's', '<nop>', { noremap = true })
 

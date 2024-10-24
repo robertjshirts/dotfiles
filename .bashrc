@@ -103,3 +103,6 @@ alias lzd="lazydocker"                    # Lazydocker
 alias permaban="rm -rf" # LMAO
 export QT_QPA_PLATFORM=xcb
 . /usr/local/etc/bash_completion.d/deno.bash
+
+# Created by `pipx` on 2024-10-23 00:34:25
+export PATH="$PATH:/home/rshirts/.local/bin"
