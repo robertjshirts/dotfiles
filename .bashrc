@@ -78,6 +78,17 @@ getip() {
     curl -s http://ip4only.me/api/ | awk -F, '{print $2}' | copy
 }
 
+# alias command for the jira cli, installed with go
+jira() {
+    if [[ "$1 $2" == "in progress" ]]; then
+        jira issue list -s "in progress"
+    elif [[ "$1" == "todo" ]]; then
+        jira issue list -s "todo"
+    else
+        command jira "$@"
+    fi
+}
+
 # Enable command history
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -101,9 +112,10 @@ alias grep='grep --color=auto'
 alias lss='ls --color=auto'               # List files (not including hidden ones)
 alias ..='cd ..'                          # Go up one directory
 alias ...='cd ../..'                      # Go up two directories
+alias lzd='lazydocker'                    # Lazydocker
+alias permaban='rm -rf'                   # LMAO
+alias lc='history -p '!!' | copy'         # Last command
 alias wezterm='WAYLAND_DISPLAY= wezterm'  # TODO: Remove this when wezterm gets fixed lol
-alias lzd="lazydocker"                    # Lazydocker
-alias permaban="rm -rf" # LMAO
 export QT_QPA_PLATFORM=xcb
 . /usr/local/etc/bash_completion.d/deno.bash
 
