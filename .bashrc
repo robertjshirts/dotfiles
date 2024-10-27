@@ -10,6 +10,7 @@ export EDITOR=nvim  # Change this to your preferred editor (e.g., vim, code)
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.deno/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Load additional scripts or configurations
 if [ -f "$HOME/.bash_aliases" ]; then
