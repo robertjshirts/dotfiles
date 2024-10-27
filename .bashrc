@@ -7,7 +7,9 @@
 export EDITOR=nvim  # Change this to your preferred editor (e.g., vim, code)
 
 # Add custom paths
-export PATH="$HOME/.deno/bin:$HOME/bin:$PATH"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.deno/bin"
 
 # Load additional scripts or configurations
 if [ -f "$HOME/.bash_aliases" ]; then
@@ -104,5 +106,3 @@ alias permaban="rm -rf" # LMAO
 export QT_QPA_PLATFORM=xcb
 . /usr/local/etc/bash_completion.d/deno.bash
 
-# Created by `pipx` on 2024-10-23 00:34:25
-export PATH="$PATH:/home/rshirts/.local/bin"
