@@ -20,8 +20,10 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 vim.opt.tabstop = 4 -- Tabstop fix
 vim.opt.shiftwidth = 4 -- Tabstop fix
--- Remove 's' key
-vim.keymap.set('v', 's', '<nop>', { noremap = true })
+vim.opt.expandtab = true -- Tabstop fix
+vim.expandtab = true -- Tabstop fix
+vim.g.loaded_netrw = 1 -- Open neotree by default
+vim.g.loaded_netrwPlugin = 1 -- Open neotree by default
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -756,13 +758,10 @@ require('lazy').setup({
   --
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  { import = 'custom.plugins' },
+  -- require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.autopairs',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -787,6 +786,11 @@ require('lazy').setup({
         },
       }
     end,
+  },
+  {
+    'github/copilot.vim',
+    event = 'InsertEnter',
+    cmd = 'Copilot',
   },
 }, {
   ui = {
