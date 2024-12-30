@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Set default editor
-export EDITOR=vim  # Change this to your preferred editor (e.g., vim, code)
+export EDITOR=nvim  # Change this to your preferred editor (e.g., vim, code)
 
 # Add custom paths
 export PATH="$PATH:$HOME/bin"
@@ -70,5 +70,5 @@ alias grep='grep --color=auto'
 alias lss='ls --color=auto'               # List files (not including hidden ones)
 alias lzd='lazydocker'                    # Lazydocker
 alias permaban='rm -rf'                   # LMAO
-alias stows='stow -R -v --dotfiles .'     # Shorthand for stow command
+alias stows='stow -v --dotfiles .'     # Shorthand for stow command
 
