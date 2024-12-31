@@ -1,5 +1,5 @@
-# Need yay if we don't alr have neovim
-if check_command nvim; then
+# If we don't have neovim, we need to check for yay
+if ! check_command nvim; then
     check_command yay
 fi
 

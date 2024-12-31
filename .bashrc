@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Util functions
 check_command() {
     local cmd="$1"
@@ -27,5 +30,6 @@ source_util dependencies
 source_util copy
 source_util history
 source_util aliases
+source_util hyprland
 
 # Automatically added
