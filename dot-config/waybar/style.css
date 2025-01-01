@@ -1,0 +1,42 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "jetbrainsmono nerd font propo";
+    font-size: 14px;
+    min-height: 0;
+    background-color: transparent;
+    color: white;
+}
+
+waybar#waybar {
+}
+
+.module {
+    padding: 0 4px;
+    margin: 4px 4px 0 4px;
+    background-color: black;
+    border-radius: 8px;
+}
+
+#clock {
+}
+
+#custom-archbutton {
+    font-size: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#workspaces {
+    font-size: 40px;
+}
+
+#workspaces > * {
+    padding: 4px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+#workspaces button:hover {
+    background: none;
+}

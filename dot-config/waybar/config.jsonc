@@ -1,33 +1,44 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/archbutton", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["tray"],
+    "modules-right": ["network", "tray"],
     
     "clock": {
         "format": "{:%H:%M}"
     },
 
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " 󰤨 ",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰤮 ",
+        "tooltip-format-wifi": "Connected to {essid}",
+        "tooltip-format-ethernet": "Connected at {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "custom/archbutton": {
+        "format": " 󰣇 ",
+    },
+
     "hyprland/workspaces": {
-        "format": "{id}: {icon}",
+        "format": "{icon}",
         "all-outputs": false,
         "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "1",
-            "7": "2",
-            "8": "3",
-            "9": "4",
-            "10": "5",
-            "active": "A"
+          "active": "",
+          "urgent": "",
+          "default": "",
         },
+        "icon-size": 14,
         "persistent-workspaces": {
             "DP-3": [1, 2, 3, 4, 5],
             "HDMI-A-1": [6, 7, 8, 9, 10],
         }
+    },
+
+    "hyprland/window": {
+        "format": "{class}",
     }
 }

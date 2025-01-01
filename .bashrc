@@ -33,3 +33,4 @@ source_util aliases
 source_util hyprland
 
 # Automatically added
+source /usr/share/nvm/init-nvm.sh
