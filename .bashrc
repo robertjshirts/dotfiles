@@ -1,3 +1,8 @@
+# Automatically added
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+    builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

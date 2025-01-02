@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+   "layer": "top",
     "position": "top",
     "modules-left": ["custom/archbutton", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
@@ -39,6 +39,10 @@
     },
 
     "hyprland/window": {
-        "format": "{class}",
+        "format": "{title}",
+        "rewrite": {
+            "(.*) — Zen Browser.*": " $1",
+            "ghostty": "󱙝 Ghostty"
+        }
     }
 }

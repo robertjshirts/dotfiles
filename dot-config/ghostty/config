@@ -1,0 +1,4 @@
+title = ghostty
+window-decoration = false
+background-opacity = 0.9
+command = tmux new-session -A -s main
