@@ -12,23 +12,25 @@ waybar#waybar {
 }
 
 .module {
-    padding: 0 4px;
+    padding: 0 8px;
     margin: 4px 4px 0 4px;
-    background-color: black;
+    background-color: #24283b;
     border-radius: 8px;
 }
 
-#clock {
-}
 
-#custom-archbutton {
-    font-size: 20px;
+#custom-archbutton #workspaces #network {
+    font-size: 40px;
     padding-left: 0px;
     padding-right: 0px;
+    margin-left: 4px;
+    margin-right: 8px;
 }
 
 #workspaces {
     font-size: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 #workspaces > * {
