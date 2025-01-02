@@ -1,24 +1,11 @@
 {
-   "layer": "top",
+    "layer": "top",
     "position": "top",
     "modules-left": ["custom/archbutton", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "tray"],
-    
-    "clock": {
-        "format": "{:%H:%M}"
-    },
+    "modules-right": ["wireplumber", "network", "tray"],
 
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": " 󰤨 ",
-        "format-ethernet": "󰈀 ",
-        "format-disconnected": "󰤮 ",
-        "tooltip-format-wifi": "Connected to {essid}",
-        "tooltip-format-ethernet": "Connected at {ipaddr}/{cidr}",
-        "tooltip-format-disconnected": "Disconnected"
-    },
-
+    // left modules
     "custom/archbutton": {
         "format": " 󰣇 ",
     },
@@ -44,5 +31,30 @@
             "(.*) — Zen Browser.*": " $1",
             "ghostty": "󱙝 Ghostty"
         }
-    }
+    },
+
+    // Middle modules
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+
+    // Right modules
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": " {volume}%",
+        "on-click": "pavucontrol",
+        "scroll-step": 5.0,
+        "format-icons": [" ", " "],
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " 󰤨 ",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰤮 ",
+        "tooltip-format-wifi": "Connected to {essid}",
+        "tooltip-format-ethernet": "Connected at {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+
 }
