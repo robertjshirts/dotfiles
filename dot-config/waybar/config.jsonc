@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["custom/archbutton", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["wireplumber", "network", "tray"],
+    "modules-right": ["wireplumber", "network", "tray", "custom/dunst"],
 
     // left modules
     "custom/archbutton": {
@@ -29,7 +29,9 @@
         "format": "{title}",
         "rewrite": {
             "(.*) — Zen Browser.*": " $1",
-            "ghostty": "󱙝 Ghostty"
+            "Zen Browser": " New Tab",
+            "ghostty": "󱙝 Ghostty",
+            "Volume Control": "󰗅 Volume Mixer"
         }
     },
 
@@ -40,21 +42,27 @@
 
     // Right modules
     "wireplumber": {
-        "format": "{volume}% {icon}",
+        "format": " {volume}%",
         "format-muted": " {volume}%",
-        "on-click": "pavucontrol",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
         "scroll-step": 5.0,
-        "format-icons": [" ", " "],
     },
 
     "network": {
         "format": "{ifname}",
         "format-wifi": " 󰤨 ",
-        "format-ethernet": "󰈀 ",
-        "format-disconnected": "󰤮 ",
+        "format-ethernet": " 󰈀 ",
+        "format-disconnected": " 󰤮 ",
         "tooltip-format-wifi": "Connected to {essid}",
         "tooltip-format-ethernet": "Connected at {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "custom/dunst": {
+        "exec": "~/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
     },
 
 }

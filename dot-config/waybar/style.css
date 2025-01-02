@@ -2,13 +2,22 @@
     border: none;
     border-radius: 0px;
     font-family: "jetbrainsmono nerd font propo";
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 700;
     min-height: 0;
     background-color: transparent;
     color: white;
 }
 
 waybar#waybar {
+}
+
+tooltip {
+    background: #24283b;
+    color: #A1BDCE;
+    font-size: 13px;
+    border-radius: 7px;
+    border: 2px solid #101a24;
 }
 
 .module {
@@ -19,12 +28,14 @@ waybar#waybar {
 }
 
 
-#custom-archbutton #workspaces #network {
-    font-size: 40px;
-    padding-left: 0px;
-    padding-right: 0px;
+#custom-archbutton, #network {
+    padding: 0;
     margin-left: 4px;
-    margin-right: 8px;
+    margin-right: 4px;
+}
+
+#custom-archbutton {
+    font-size: 20px;
 }
 
 #workspaces {
