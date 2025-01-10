@@ -1,0 +1,142 @@
+/**
+ * Rofi Theme
+ * Tokyo Night color scheme
+ */
+
+/* Global properties */
+* {
+    font: "JetBrainsMono Nerd Font 12";
+    
+    /* Tokyo Night colors */
+    bg-dark:     #1f2335;
+    bg-medium:   #24283b;
+    bg-light:    #292e42;
+    fg-dark:     #565f89;
+    fg-light:    #a9b1d6;
+    blue:        #7aa2f7;
+    blue-light:  #7dcfff;
+    purple:      #bb9af7;
+    orange:      #ff9e64;
+    yellow:      #ffc777;
+    red:         #ff757f;
+    
+    /* Theme colors */
+    background:                  @bg-medium;
+    background-color:           rgba(0, 0, 0, 0%);
+    foreground:                 @fg-light;
+    border-color:              @bg-light;
+    separatorcolor:            @bg-light;
+    
+    /* State colors */
+    normal-background:          @bg-dark;
+    normal-foreground:          @fg-light;
+    alternate-normal-background: @bg-dark;
+    alternate-normal-foreground: @fg-light;
+    selected-normal-background:  @bg-light;
+    selected-normal-foreground:  @blue;
+    
+    /* Spacing */
+    spacing: 2;
+}
+
+/* Main window */
+window {
+    background-color: @background;
+    border-radius:   8px;
+    padding:         12px;
+    width:           30%;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+/* Message */
+message {
+    border:       2px 0px 0px;
+    border-color: @separatorcolor;
+    padding:      8px;
+}
+
+textbox {
+    text-color: @foreground;
+}
+
+/* List view */
+listview {
+    fixed-height: 0;
+    border:       2px 0px 0px;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    true;
+    padding:      4px 0px 0px;
+    lines:        10;
+}
+
+/* List elements */
+element {
+    border:        0;
+    padding:       8px;
+    border-radius: 4px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+/* Scrollbar */
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @fg-dark;
+    handle-width: 8px;
+    padding:      0;
+}
+
+/* Input */
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    8px;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+entry {
+    spacing:    0;
+    text-color: @blue;
+}
+
+prompt {
+    spacing:    0;
+    text-color: @purple;
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em;
+    text-color: @purple;
+}
+
