@@ -39,3 +39,6 @@ source_util hyprland
 
 # Automatically added
 source /usr/share/nvm/init-nvm.sh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/rshirts/.lmstudio/bin"

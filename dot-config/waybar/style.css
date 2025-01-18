@@ -53,3 +53,16 @@ tooltip {
 #workspaces button:hover {
     background: none;
 }
+
+#clock {
+    padding: 0 8px;
+    margin: 4px 4px 0 4px;
+    background-color: #24283b;
+    border-radius: 8px;
+}
+
+tooltip label {
+    font-family: "jetbrainsmono nerd font propo";
+    padding: 5px;
+    border-radius: 7px;
+}
