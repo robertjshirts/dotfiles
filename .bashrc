@@ -42,3 +42,11 @@ source /usr/share/nvm/init-nvm.sh
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/rshirts/.lmstudio/bin"
+
+# pnpm
+export PNPM_HOME="/home/rshirts/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
