@@ -6,6 +6,7 @@ alias lzg='lazygit'                                  # Lazygit
 alias permaban='rm -rf'                              # LMAO
 alias stows='/usr/bin/stow -v --dotfiles -d ~/dotfiles .' # Shorthand for stow command
 alias dc="docker-compose"                            # shorthand for docker DASH compose
+alias notes="nvim '+normal Go' '+startinsert!' ~/notes"                           # Notes 
 
 # Complicated aliases
 stow() {
