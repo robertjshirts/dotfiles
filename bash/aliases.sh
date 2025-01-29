@@ -4,7 +4,7 @@ alias lss='ls --color=auto'                          # List files (not including
 alias lzd='lazydocker'                               # Lazydocker
 alias lzg='lazygit'                                  # Lazygit
 alias permaban='rm -rf'                              # LMAO
-alias stows='/usr/bin/stow -v --dotfiles ~/dotfiles' # Shorthand for stow command
+alias stows='/usr/bin/stow -v --dotfiles -d ~/dotfiles .' # Shorthand for stow command
 alias dc="docker-compose"                            # shorthand for docker DASH compose
 
 # Complicated aliases
