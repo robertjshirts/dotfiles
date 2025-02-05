@@ -29,13 +29,13 @@ return {
                             telemetry = {
                                 enable = false, -- quit spying on me
                             },
+                            format = {
+                                shiftwidth = 2,
+                                tabstop = 2,
+                                expandtab = true,
+                            },
                         },
                     },
-                    indent = {
-                        shiftwidth = 2,
-                        tabstop = 2,
-                        expandtab = true,
-                    }
                 }, -- Lua moment
                 gopls = {},
                 ts_ls = {

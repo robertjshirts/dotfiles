@@ -10,12 +10,12 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.opt.breakindent = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.schedule(function()
-    vim.opt.clipboard = 'unnamedplus'
+  vim.opt.clipboard = 'unnamedplus'
 end)
 
 vim.opt.splitright = true
@@ -27,10 +27,10 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
-    callback = function(args)
-        require("conform").format({ bufnr = args.buf })
-    end
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end
 })
 
 require("config.lazy")
