@@ -19,7 +19,7 @@ fi
 # Update system, check for error messages
 if output=$(yay -Syu --noconfirm 2>&1); then
     # Update succeed
-    notify-send "System Update" "Update completed!\nUpdates $update_count packages" -u normal
+    notify-send "System Update" "Update completed!\nUpdated $update_count packages" -u normal
 else 
     # Update fail
     error_message=$(echo "$output" | tail -n 5) # Get last 5 lines of error
