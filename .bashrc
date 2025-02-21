@@ -29,6 +29,9 @@ source_util() {
     fi
 }
 
+# Secrets
+source ~/.bash_secrets
+
 # Imports
 source_util exports
 source_util dependencies
@@ -36,6 +39,7 @@ source_util copy
 source_util history
 source_util aliases
 source_util hyprland
+
 
 # Automatically added
 source /usr/share/nvm/init-nvm.sh
