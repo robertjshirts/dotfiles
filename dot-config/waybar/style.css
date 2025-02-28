@@ -1,68 +1,228 @@
+/* Basic styling for Waybar */
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: "jetbrainsmono nerd font propo";
-    font-size: 16px;
-    font-weight: 700;
-    min-height: 0;
-    background-color: transparent;
-    color: white;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  min-height: 0;
 }
 
-waybar#waybar {
+window#waybar {
+  background-color: transparent;
+  color: #cdd6f4;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  padding: 4px 0;
 }
 
-tooltip {
-    background: #24283b;
-    color: #A1BDCE;
-    font-size: 13px;
-    border-radius: 7px;
-    border: 2px solid #101a24;
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
-.module {
-    padding: 0 8px;
-    margin: 4px 4px 0 4px;
-    background-color: #24283b;
-    border-radius: 8px;
-}
-
-
-#custom-archbutton, #network {
-    padding: 0;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-#custom-archbutton {
-    font-size: 20px;
-}
-
+/* Module styling */
 #workspaces {
-    font-size: 40px;
-    padding-left: 0px;
-    padding-right: 0px;
+  background-color: rgba(250, 179, 135, 0.18);
+  margin: 4px 3px;
+  border-radius: 8px;
+  padding: 0 2px;
 }
 
-#workspaces > * {
-    padding: 4px;
-    margin: 4px;
-    border-radius: 4px;
+#workspaces button {
+  padding: 0 8px;
+  margin: 3px 2px;
+  background-color: transparent;
+  color: #cdd6f4;
+  border: none;
+  border-radius: 6px;
+  min-height: 20px;
+  transition: all 0.3s ease;
 }
 
 #workspaces button:hover {
-    background: none;
+  background: rgba(166, 173, 200, 0.2);
+  color: #f5c2e7;
+}
+
+#workspaces button.active {
+  background-color: rgba(137, 180, 250, 0.4);
+  color: #cdd6f4;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(137, 180, 250, 0.5);
+}
+
+#workspaces button.urgent {
+  background-color: rgba(243, 139, 168, 0.5);
+  color: #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#wireplumber,
+#custom-notification,
+#tray,
+#custom-power,
+#custom-launcher,
+#window {
+  padding: 0 8px;
+  margin: 4px 3px;
+  min-height: 26px;
+  color: #cdd6f4;
+}
+
+#window {
+  font-weight: bold;
+  background-color: rgba(116, 199, 236, 0.18);
+  color: #89dceb;
 }
 
 #clock {
-    padding: 0 8px;
-    margin: 4px 4px 0 4px;
-    background-color: #24283b;
-    border-radius: 8px;
+  background-color: rgba(201, 203, 255, 0.18);
+  color: #89b4fa;
+  font-weight: bold;
+}
+
+#network {
+  background-color: rgba(166, 227, 161, 0.18);
+  color: #a6e3a1;
+}
+
+#network.disconnected {
+  background-color: rgba(243, 139, 168, 0.18);
+  color: #f38ba8;
+}
+
+#wireplumber {
+  background-color: rgba(249, 226, 175, 0.18);
+  color: #f9e2af;
+}
+
+#wireplumber.muted {
+  background-color: rgba(243, 139, 168, 0.18);
+  color: #f38ba8;
+}
+
+#custom-notification {
+  background-color: rgba(245, 194, 231, 0.18);
+  color: #f5c2e7;
+  min-width: 28px;
+  padding: 4px 8px;
+}
+
+#custom-power {
+  background-color: rgba(243, 139, 168, 0.18);
+  color: #f38ba8;
+  font-size: 16px;
+  margin-right: 6px;
+  padding: 0 10px 0 8px;
+}
+
+#custom-launcher {
+  background-color: rgba(137, 180, 250, 0.18);
+  color: #89b4fa;
+  font-size: 16px;
+  margin-left: 6px;
+}
+
+#tray {
+  background-color: rgba(203, 166, 247, 0.18);
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #f38ba8;
+}
+
+#custom-separator {
+  color: #313244;
+  padding: 0;
+  margin: 0 2px;
+}
+
+tooltip {
+  background-color: #1e1e2e;
+  border: 1px solid #89b4fa;
 }
 
 tooltip label {
-    font-family: "jetbrainsmono nerd font propo";
-    padding: 5px;
-    border-radius: 7px;
+  color: #cdd6f4;
+  font-size: 15px;
 }
+
+/** {*/
+/*    border: none;*/
+/*    border-radius: 0px;*/
+/*    font-family: "jetbrainsmono nerd font propo";*/
+/*    font-size: 16px;*/
+/*    font-weight: 700;*/
+/*    min-height: 0;*/
+/*    background-color: transparent;*/
+/*    color: white;*/
+/*}*/
+/**/
+/*waybar#waybar {*/
+/*}*/
+/**/
+/*tooltip {*/
+/*    background: #24283b;*/
+/*    color: #A1BDCE;*/
+/*    font-size: 13px;*/
+/*    border-radius: 7px;*/
+/*    border: 2px solid #101a24;*/
+/*}*/
+/**/
+/*.module {*/
+/*    padding: 0 8px;*/
+/*    margin: 4px 4px 0 4px;*/
+/*    background-color: #24283b;*/
+/*    border-radius: 8px;*/
+/*}*/
+/**/
+/**/
+/*#custom-archbutton, #network {*/
+/*    padding: 0;*/
+/*    margin-left: 4px;*/
+/*    margin-right: 4px;*/
+/*}*/
+/**/
+/*#custom-archbutton {*/
+/*    font-size: 20px;*/
+/*}*/
+/**/
+/*#workspaces {*/
+/*    font-size: 40px;*/
+/*    padding-left: 0px;*/
+/*    padding-right: 0px;*/
+/*}*/
+/**/
+/*#workspaces > * {*/
+/*    padding: 4px;*/
+/*    margin: 4px;*/
+/*    border-radius: 4px;*/
+/*}*/
+/**/
+/*#workspaces button:hover {*/
+/*    background: none;*/
+/*}*/
+/**/
+/*#clock {*/
+/*    padding: 0 8px;*/
+/*    margin: 4px 4px 0 4px;*/
+/*    background-color: #24283b;*/
+/*    border-radius: 8px;*/
+/*}*/
+/**/
+/*tooltip label {*/
+/*    font-family: "jetbrainsmono nerd font propo";*/
+/*    padding: 5px;*/
+/*    border-radius: 7px;*/
+/*}*/
