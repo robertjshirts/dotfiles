@@ -24,9 +24,26 @@ local function setup_json_settings()
   })
 end
 
+local function setup_neotree_dir_handler()
+  -- Create an autocommand group for directory handling
+  local augroup = vim.api.nvim_create_augroup("DirHandler", { clear = true })
+
+  -- Open Neo-tree when Neovim starts with a directory argument
+  vim.api.nvim_create_autocmd("VimEnter", {
+    group = augroup,
+    callback = function()
+      local arg = vim.fn.expand("%:p")
+      if vim.fn.isdirectory(arg) == 1 then
+        vim.cmd("Neotree " .. arg)
+      end
+    end,
+  })
+end
+
 return {
   setup = function()
     setup_conform()
     setup_json_settings()
+    setup_neotree_dir_handler()
   end,
 }
