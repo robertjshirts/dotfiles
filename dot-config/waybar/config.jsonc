@@ -27,6 +27,8 @@
     "custom/separator",
     "custom/notification",
     "custom/separator",
+    "custom/wallpaper",
+    "custom/separator",
     "custom/power"
   ],
 
@@ -69,7 +71,7 @@
 
   // Clock module with calendar on click
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%I:%M %p}",
     "format-alt": "{:%Y-%m-%d}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
@@ -134,6 +136,14 @@
     "format": "⏻",
     "on-click": "~/.config/waybar/scripts/power.sh",
     "tooltip": false
+  },
+
+  "custom/wallpaper": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/wallpaper.sh",
+    "on-click": "~/.config/waybar/scripts/wallpaper.sh switch",
+    "interval": 5,
+    "tooltip": "Switch wallpaper"
   },
 
   "custom/launcher": {
